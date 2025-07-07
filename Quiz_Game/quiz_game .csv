@@ -1,0 +1,13 @@
+question,choix1,choix2,choix3,choix4,bonne_reponse,categorie,difficulte
+Qu'est-ce que l'intelligence artificielle ?,Une technologie de stockage,Une machine capable d'apprendre,Une base de données,Un système d'exploitation,B,IA,debutant
+Quel protocole sécurise les sites web ?,FTP,HTTP,HTTPS,SMTP,C,SECURITE,debutant
+Quel appareil permet de connecter plusieurs réseaux ?,Routeur,Switch,Modem,Hub,A,RESEAUX,debutant
+Que permet une clé primaire ?,Créer un mot de passe,Identifier une ligne unique,Créer une sauvegarde,Trier les données,B,BDD,debutant
+Quel est le rôle d’un pare-feu ?,Sauvegarder les fichiers,Bloquer ou autoriser le trafic réseau,Convertir les données,Émettre des factures,B,SECURITE,intermediaire
+Quel est le nom de l'algorithme d'apprentissage supervisé populaire ?,Merge Sort,k-Means,K-Nearest Neighbors,DFS,C,IA,intermediaire
+Quel protocole est utilisé pour attribuer une adresse IP automatiquement ?,DNS,DHCP,TCP,FTP,B,RESEAUX,intermediaire
+Qu’est-ce qu’une requête SQL de type SELECT fait ?,Modifie des données,Supprime une table,Insère une ligne,Récupère des données,D,BDD,intermediaire
+Qu'est-ce qu'une attaque par phishing ?,Une attaque sur le matériel,Une simulation IA,Une usurpation d'identité par e-mail,Une analyse réseau,C,SECURITE,avance
+Quel est le rôle d’un réseau de neurones convolutif (CNN) ?,Traitement du langage,Analyse d’images,Sécurisation des mots de passe,Tri de fichiers,B,IA,avance
+Quel protocole fonctionne en couche transport ?,IP,TCP,HTTP,DNS,B,RESEAUX,avance
+Quelle commande SQL permet de créer une table ?,CREATE,MAKE,BUILD,FORM,A,BDD,avance
