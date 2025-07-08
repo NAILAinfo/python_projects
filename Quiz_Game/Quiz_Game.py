@@ -1,81 +1,62 @@
-import csv 
-📥 Lire le fichier CSV
+import csv
 
-🧠 Stocker les données dans une structure (liste de dictionnaires par exemple)
-
-❓ Afficher les questions une à une
-
-✅ Comparer la réponse de l’utilisateur avec la bonne réponse
-
-🧾 Afficher le score final
-
-questions = []
-
-with open('quiz_game .csv', newline='', encoding='utf-8') as file:
-    lecteur = csv.DictReader(file)
-    for ligne in lecteur:
-        question = dict('question'=)
-
-
-
-print('Bienvenue dans le quiz !')
-
-print('Choisis une catégorie pour commencer :')
-print('1.🤖 Intelligence Artificielle (IA)')
-print('2.🖥️ Systèmes d’exploitation (OS)')
-print('3.🔐 Cybersécurité')
-print('4.🗃️Base de donnees ')
-
-ctg = {'1':'IA' , '2':'OS' , '3':'SEC' , '4':'BDD'}
-c=0
-choix = int(input(':')
-if choix not in ctg:
-        print('le numero doit etre soit 1 , 2 , 3')
-        else :
-                choix = ctg[choix]
-                    print('Choisis le niveau de difficulte :')
-                        print('1.Debutant')
-                            print('2.Intermédiaire ')
-                                print('3.Avance ')
-                                
-                                    level = int(input(':')
-                                        if level not in ['1','2','3'] :
-                                                   print('le numero doit etre  1 , 2 ou 3')
-                                                       else :
-                                                                print('Le quiz va commencer, bonne chance ! ')
-                                                                        for e in questions.values():
-                                                                                        if e["categories"]==choix :
-                                                                                                            print(e["question"]+"?")
-                                                                                                                            for c in e["choix"]:
-                                                                                                                                                    print(c)
-                                                                                                                                                                    x = input("votre reponse :")
-                                                                                                                                                                                    if x not in ['A','B','C','D']:
-                                                                                                                                                                                                            print('la reponse doit etre A , B , C ou D')
-                                                                                                                                                                                                                            else :
-                                                                                                                                                                                                                                                    if e["bonne_reponse"] == x:   
-                                                                                                                                                                                                                                                                                    print("bonne reponse ")
-                                                                                                                                                                                                                                                                                                                c+=1
-                                                                                                                                                                                                                                                                                                                                    else:
-                                                                                                                                                                                                                                                                                                                                                                print("c'est faux ")
-                                                                                                                                                                                                                                                                                                                                                                print(f"ton score finale est :{c}")))
-                                                                ]
-                                            }
-                                                            ]
-                                        }
-                                                        ]
-                                    }
-                                                    ]
-                                }
-                                                ]
-                            }
-                                            ]
-                        }
-                                        ]
-                    }
-                                    ]
-                }
-                                ]
+def charger_questions(fichier_csv, categorie=None, difficulte=None):
+    questions = []
+    with open(fichier_csv, newline='', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            if (categorie and row["categorie"].lower() != categorie.lower()) or \
+               (difficulte and row["difficulte"].lower() != difficulte.lower()):
+                continue
+            question = {
+                "texte": row["question"],
+                "choix": {
+                    "A": row["choix1"],
+                    "B": row["choix2"],
+                    "C": row["choix3"],
+                    "D": row["choix4"]
+                },
+                "bonne_reponse": row["bonne_reponse"].upper(),
+                "categorie": row["categorie"],
+                "difficulte": row["difficulte"]
             }
-                            ]
-        }
-}
+            questions.append(question)
+    return questions
+
+def jouer_quiz(questions):
+    score = 0
+    for i, q in enumerate(questions, 1):
+        print(f"\nQuestion {i} [{q['categorie']} - {q['difficulte'].capitalize()}]")
+        print(q["texte"])
+        for lettre, choix in q["choix"].items():
+            print(f"{lettre}. {choix}")
+        while True:
+            reponse = input("Votre réponse (A, B, C ou D) : ").strip().upper()
+            if reponse in ['A', 'B', 'C', 'D']:
+                break
+            print("Entrée invalide. Choisissez A, B, C ou D.")
+        if reponse == q["bonne_reponse"]:
+            print("✅ Bonne réponse !")
+            score += 1
+        else:
+            print(f"❌ Mauvaise réponse. La bonne réponse était {q['bonne_reponse']}: {q['choix'][q['bonne_reponse']]}")
+    print(f"\n🎯 Score final : {score} / {len(questions)}")
+
+# --- Programme principal ---
+if __name__ == "__main__":
+    fichier = "questions.csv"
+
+    # Facultatif : filtrer par catégorie ou difficulté
+    cat = input("Filtrer par catégorie (laisser vide pour tout) : ").strip()
+    diff = input("Filtrer par difficulté (débutant, intermediaire, avance, vide pour tout) : ").strip()
+
+    if cat == "":
+        cat = None
+    if diff == "":
+        diff = None
+
+    questions = charger_questions(fichier, categorie=cat, difficulte=diff)
+    if not questions:
+        print("Aucune question trouvée avec ces filtres.")
+    else:
+        jouer_quiz(questions)
