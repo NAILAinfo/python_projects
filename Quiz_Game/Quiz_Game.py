@@ -36,27 +36,28 @@ def jouer_quiz(questions):
                 break
             print("Entrée invalide. Choisissez A, B, C ou D.")
         if reponse == q["bonne_reponse"]:
-            print("✅ Bonne réponse !")
+            print("Bonne réponse !")
             score += 1
         else:
-            print(f"❌ Mauvaise réponse. La bonne réponse était {q['bonne_reponse']}: {q['choix'][q['bonne_reponse']]}")
+            print(f"❌ Mauvaise réponse.")
+            print(f"La bonne réponse était {q['bonne_reponse']}: {q['choix'][q['bonne_reponse']]}")
     print(f"\n🎯 Score final : {score} / {len(questions)}")
 
-# --- Programme principal ---
+#  Programme principal 
 if __name__ == "__main__":
     fichier = "questions.csv"
 
-    # Facultatif : filtrer par catégorie ou difficulté
-    cat = input("Filtrer par catégorie (laisser vide pour tout) : ").strip()
+    ctgr = input("Filtrer par catégorie (laisser vide pour tout) : ").strip()
     diff = input("Filtrer par difficulté (débutant, intermediaire, avance, vide pour tout) : ").strip()
 
-    if cat == "":
-        cat = None
+    if ctgr == "":
+        ctgr = None
     if diff == "":
         diff = None
 
-    questions = charger_questions(fichier, categorie=cat, difficulte=diff)
+    questions = charger_questions(fichier, categorie=ctgr, difficulte=diff)
     if not questions:
         print("Aucune question trouvée avec ces filtres.")
     else:
         jouer_quiz(questions)
+
