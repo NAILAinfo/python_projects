@@ -22,11 +22,6 @@ def verifier_victoire(board[], symbole):
             return True
     return False
 
-p1 = "➡️ Player X, it's your turn. Choose a cell (1-9): "
-p2 = "➡️ Player O, it's your turn. Choose a cell (1-9): "
-taken = "❗ That cell is already taken. Please choose another one."
-finall = "🏆 Congratulations! Player X wins the game! 🎉 "
-draw = "⚠️ It's a draw! No one wins this round."
 
 # programme initiale
 print("🎮 Welcome to Tic-Tac-Toe (X/O) Game!")
@@ -51,23 +46,36 @@ board = []
 for i in rang(0,8):
     board[i]=i+1
 
-def winCase(board[]):
-    if board[0]==board[1]==board[2] or board[0]==board[1]==board[2]
-
-
+final ==True
 while final :
-    print("Player "+choix1 + ", it's your turn.")
-    affichage(board[])
-    j = int("enter the cell number (1-9)")
+    affichage(board)
+    j = input("Player "+ choix1 + ", it's your turn. Choose a cell (1-9): ")
     if j not in [1,2,3,4,5,6,7,8,9] :
         print("erreur , it should be between 1 and 9")
-    board[j-1]=j
-
-    print("Player "+choix2 + ", it's your turn.")
-    affichage(board[])
-    j = int("enter the cell number (1-9)")
-    if j not in [1,2,3,4,5,6,7,8,9] :
-        print("erreur , it should be between 1 and 9")
-    board[j-1]=j    
-
+    elif board[j-1] !=j :
+        print("❗ That cell is already taken. Please choose another one.")
+    else:
+        board[j-1]= choix1
     
+    if verifier_victoire(board, choix1):
+        print("🏆 Congratulations! Player "+choix1+" wins the game! 🎉 )
+        print('Thanks for playing!')
+        final = False
+        break
+    if encore(board) == True :
+        affichage(board)
+        j = input("Player "+ choix2 + ", it's your turn. Choose a cell (1-9): ")
+        if j not in [1,2,3,4,5,6,7,8,9] :
+            print("erreur , it should be between 1 and 9")
+        elif board[j-1] !=j :
+            print("❗ That cell is already taken. Please choose another one.")
+        else:
+            board[j-1]= choix2
+        
+        if verifier_victoire(board, choix2):
+            print("🏆 Congratulations! Player "+choix2+" wins the game! 🎉 )
+            print('Thanks for playing!')
+            final = False
+            break
+    else:
+    print( "⚠️ It's a draw! No one wins this round.")
