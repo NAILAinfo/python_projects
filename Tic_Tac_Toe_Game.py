@@ -1,11 +1,11 @@
 valeur = ['X','O']
-def affichage(bord):
+def affichage(board):
     print("Current board:")
-    print(bord[0] + "|" + bord[1]+ "|" + bord[2] )
+    print(board[0] , "|" , board[1], "|" , board[2] )
     print("-------------")
-    print(bord[3] + "|" + bord[4]+ "|" + bord[5] )
+    print(board[3] , "|" , board[4], "|" , board[5] )
     print("-------------")
-    print(bord[6] + "|" + bord[7]+ "|" + bord[8] )
+    print(board[6] , "|" , board[7], "|" , board[8] )
 
 def verifier_victoire(board, symbole):
     combinaisons = [
@@ -33,7 +33,7 @@ print("🎮 Welcome to Tic-Tac-Toe (X/O) Game!")
 print("Two players will take turns: one plays with X, the other with O.")
 
 choix1 = input("Player 1 choose your symbol (X or O):" ).upper()
-while choix1 not in valeur] :
+while choix1 not in valeur :
     print("Erreur : vous devez choisir X ou O.")
     choix1 = input("Réessayez. Choisissez X ou O: ").upper()
 
@@ -42,9 +42,8 @@ print(f"Player 2 will play with: {choix2}")
 
 
 
-board = []
-for i in range(0,8):
-    board[i]=i+1
+board = [i + 1 for i in range(9)]  # Crée une liste de 1 à 9
+
 
 final =True
 actuel= choix1
@@ -53,7 +52,7 @@ actuel= choix1
 while final :
     affichage(board)
     j = int(input("Player "+ actuel + ", it's your turn. Choose a cell (1-9): "))
-    if j< 1 or j > 9: :
+    if j< 1 or j > 9: 
         print("erreur , it should be between 1 and 9")
         continue
 
