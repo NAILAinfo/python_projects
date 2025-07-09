@@ -1,10 +1,26 @@
-affichage(bord[]):
+def affichage(bord[]):
     print("Current board:")
     print(bord[0] + "|" + bord[1]+ "|" + bord[2] )
     print("-------------")
     print(bord[3] + "|" + bord[4]+ "|" + bord[5] )
     print("-------------")
     print(bord[6] + "|" + bord[7]+ "|" + bord[8] )
+
+def verifier_victoire(board[], symbole):
+    combinaisons = [
+        [0, 1, 2],  # ligne 1
+        [3, 4, 5],  # ligne 2
+        [6, 7, 8],  # ligne 3
+        [0, 3, 6],  # colonne 1
+        [1, 4, 7],  # colonne 2
+        [2, 5, 8],  # colonne 3
+        [0, 4, 8],  # diagonale \
+        [2, 4, 6]   # diagonale /
+    ]
+    for c in combinaisons:
+        if grille[c[0]] == symbole and grille[c[1]] == symbole and grille[c[2]] == symbole:
+            return True
+    return False
 
 p1 = "➡️ Player X, it's your turn. Choose a cell (1-9): "
 p2 = "➡️ Player O, it's your turn. Choose a cell (1-9): "
@@ -34,6 +50,9 @@ while playing :
 board = []
 for i in rang(0,8):
     board[i]=i+1
+
+def winCase(board[]):
+    if board[0]==board[1]==board[2] or board[0]==board[1]==board[2]
 
 
 while final :
