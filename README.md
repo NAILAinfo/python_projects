@@ -8,9 +8,8 @@ This repository contains a collection of **beginner-friendly Python projects** i
 
 | Project                      | Description                              | Difficulty |
 | ---------------------------- | ---------------------------------------- | ---------- |
-| 🎲 Dice Rolling Game         | Simulates rolling dice                   | ⭐⭐☆☆☆      |
-| 🔢 Number Guessing Game      | Guess a randomly generated number        | ⭐⭐⭐☆☆      |
-| ✊🖐✌ Rock, Paper, Scissors   | Classic hand game simulation             | ⭐⭐⭐☆☆      |
+| 🎲 Dice Rolling Game         |                    | ⭐⭐☆☆☆      |
+| ✊🖐✌ Rock, Paper, Scissors   |             | ⭐⭐⭐☆☆      |
 | 📷 QR Code Generator         | Generate QR codes from text or URLs      | ⭐⭐⭐☆☆      |
 | 💱 Currency Converter        | Convert between currencies (fixed rates) | ⭐⭐⭐☆☆      |
 | ❓ Quiz Game                  | Multiple choice trivia quiz              | ⭐⭐⭐☆☆      |
