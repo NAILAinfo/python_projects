@@ -1,51 +1,72 @@
-import csv 
- 
-
-listt = []
-# le task est definie par nom , categorie 
-# le task peut etre modifier , supprimer , ajouter , completed , filter by categories
-# save the liste to a flie  and loads it when the program starts
-task = {
-    'name'= 
-
-}
+def print_menu():
+  print('\nTodo List Menu:')
+  print('1. View Tasks')
+  print('2. Add a Task')
+  print('3. Remove a Task')
+  print('4. Exit')
 
 
-print(listt.values())
- 
-def menu():
-    print("Todo List Menu :")
-    print("1.View tasks")
-    print("2.Add a Task")
-    print("3.Remove a Task")
-    print("4.Exit")
-
-def choice(): 
-    valide = False    
-    while not valide :
-        i = int(input("Enter your choice :"))
-        if 1 <= i <= 4:
-                valide = True
-            else:
-                print("Erreur : le nombre doit être entre 1 et 4.")
-    return i
-
-def ajouter():
-    y = input("Enter the categorie of the task :")
-    x = input("Enter a new task :")
-    newTask = {"categorie" : y ,"task": x ,"etat":false}
-    listt.append(newTask)
-
-def supprimer():    
-    x = input("Enter the task tha you want to remove :")
-    listt = [e for e in listt if e["task"] != x]
-
-def affichageAll():
-    print("------------------------------------------------------------------")
-    print("|    Tasks                   |   Catgorie      |     Statue     | ")
-    for e in listt :
-        print("|" ,e["task"],"|" ,e["categorie"] "|"  , e["etat"] )
-        print("---------------------------------------------------------------")
+def get_choice():
+  while True:
+    choice = input('Enter your choice: ')
+    valid_choices = ('1', '2', '3', '4')
+    if choice not in valid_choices:
+      print('Invalid choice')
+      continue
+    else:
+      return choice
 
 
-def affichageDid
+def display_tasks(tasks):
+  if not tasks:
+    print('No tasks in the list.')
+    return
+  
+  for index, task in enumerate(tasks, start=1):
+    print(f'{index}. {task}')
+
+
+def add_task(tasks):
+  while True:
+    task = input('Enter a new task: ').strip()
+    if len(task) != 0:
+      tasks.append(task)
+      break
+    else:
+      print('Invalid task!')
+
+
+def remove_task(tasks):
+  display_tasks(tasks)
+
+  while True:
+    try:
+      task_number = int(input('Enter the task number: '))
+      if 1 <= task_number <= len(tasks):
+        tasks.pop(task_number - 1)
+        break
+      else:
+        raise ValueError
+    except ValueError:
+      print('Invalid task number')
+
+def main():
+  tasks = []
+
+  while True:
+    print_menu()
+
+    choice = get_choice()
+
+    if choice == '1':
+      display_tasks(tasks)
+    elif choice == '2':
+      add_task(tasks)
+    elif choice == '3':
+      remove_task(tasks)
+    else:
+      break
+  
+
+if __name__ == '__main__':
+  main()
