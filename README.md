@@ -26,20 +26,15 @@ This repository contains a collection of **beginner-friendly Python projects** i
 
 ---
 
-## 💡 Learning Goals
-
+### Learning Goals
 * Strengthen logical thinking and problem solving
-* Practice working with strings, loops, conditionals, and lists
-* Introduce files, modules, and object-oriented programming
-* Build confidence through hands-on experience
-
-
----
-
+* Practice working with **strings**, **loops**, **conditionals**, and **lists**
+* Introduce **files**, **modules**, and **object-oriented programming**
+  
 ###  Requirements
 * Libraries (depending on the project):
   * `qrcode` for QR Code Generator
-  * Standard libraries: `random`, `os`, `json`, etc.
+  * Standard libraries: `random`, `os`, `json`.
 ### Extra Resources
 * [Project handbook](https://cdn.codewithmosh.com/image/upload/v1725636826/guides/python-projects-for-beginners.pdf)
   
