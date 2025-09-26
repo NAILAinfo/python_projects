@@ -1,10 +1,10 @@
 # 🐍 Python Projects for Beginners
 
-This repository contains a collection of **beginner-friendly Python projects** inspired by Code with Mosh . Each project is designed to help you strengthen your Python skills through fun and practical exercises.
+This repository contains a collection of **beginner-friendly Python projects** inspired by Code with Mosh . Each project is designed to help strengthen Python skills through fun  exercises.
 
 ---
 
-## 📚 Project List
+### Project List
 
 | Project                      | Description                              | Difficulty |
 | ---------------------------- | ---------------------------------------- | ---------- |
