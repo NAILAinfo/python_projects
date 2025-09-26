@@ -2,10 +2,7 @@
 
 This repository contains a collection of **beginner-friendly Python projects** inspired by Code with Mosh . Each project is designed to help strengthen Python skills through fun  exercises.
 
----
-
 ### Project List
-
 | Project                      | Description                              | Difficulty |
 | ---------------------------- | ---------------------------------------- | ---------- |
 | 🎲 Dice Rolling Game         |                    | ⭐⭐☆☆☆      |
@@ -24,8 +21,6 @@ This repository contains a collection of **beginner-friendly Python projects** i
 | 🎰 Slot Machine              | Bet and spin virtual reels               | ⭐⭐⭐⭐⭐      |
 | 🏧 ATM Simulation            | Simulate ATM transactions with OOP       | ⭐⭐⭐⭐⭐⭐     |
 
----
-
 ### Learning Goals
 * Strengthen logical thinking and problem solving
 * Practice working with **strings**, **loops**, **conditionals**, and **lists**
@@ -38,5 +33,5 @@ This repository contains a collection of **beginner-friendly Python projects** i
 ### Extra Resources
 * [Project handbook](https://cdn.codewithmosh.com/image/upload/v1725636826/guides/python-projects-for-beginners.pdf)
   
----
+
 
