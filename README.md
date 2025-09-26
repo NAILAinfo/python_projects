@@ -36,17 +36,11 @@ This repository contains a collection of **beginner-friendly Python projects** i
 
 ---
 
-## 📦 Requirements
-
+###  Requirements
 * Libraries (depending on the project):
-
   * `qrcode` for QR Code Generator
   * Standard libraries: `random`, `os`, `json`, etc.
-
----
-
-## 📺 Extra Resources
-
+### Extra Resources
 * [Project handbook](https://cdn.codewithmosh.com/image/upload/v1725636826/guides/python-projects-for-beginners.pdf)
   
 ---
